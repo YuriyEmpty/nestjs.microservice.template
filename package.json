@@ -1,5 +1,5 @@
 {
-  "name": "crm.service.sessions",
+  "name": "nestjs.service.template",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",

@@ -5,11 +5,11 @@
  */
 
 import { ExtendedController } from "@yuriyempty/nestjs-extended-controller";
-import { SectionsController } from "../sections.controller";
+import { ApiController } from "../api.controller";
 import { Body, Post, Request } from "@nestjs/common";
 
 @ExtendedController({
-    parent: SectionsController,
+    parent: ApiController,
     path: "example"
 })
 export class ExampleController {

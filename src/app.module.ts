@@ -6,12 +6,12 @@
 
 
 import { MiddlewareConsumer, Module, NestModule, CacheModule } from "@nestjs/common";
-import { SectionsModule } from "./sections/sections.module";
+import { ApiModule } from "./api/api.module";
 import { ExampleMiddleware } from "./core/middlewares/example.middleware";
 
 @Module({
     imports: [
-        SectionsModule
+        ApiModule
     ]
 })
 export class AppModule implements NestModule {
