@@ -13,7 +13,6 @@ ConfigModule.forRoot({
 import { NestExpressApplication } from "@nestjs/platform-express";
 import { NestFactory } from "@nestjs/core";
 import { AppModule } from "./src/app.module";
-import { EnvHelper } from "./src/core/helpers/env.helper";
 import { ValidationPipe } from "@nestjs/common";
 import { Transport } from "@nestjs/microservices";
 
@@ -27,7 +26,7 @@ class Microservice {
     /**
      * Application port
      */
-    private port: number = Number.parseInt(EnvHelper.get("HTTP_SERVER_PORT"));
+    private port: number = Number.parseInt(process.env.HTTP_SERVER_PORT);
 
     /**
      * Run application
@@ -41,7 +40,7 @@ class Microservice {
         // this.app.connectMicroservice({
         //     transport: Transport.REDIS,
         //     options: {
-        //         url: EnvHelper.get("REDIS_URL")
+        //         url: process.env.REDIS_URL
         //     }
         // })
 
@@ -54,7 +53,7 @@ class Microservice {
      * Print all available HTTP routes to the console
      */
     private printHTTPRoutes(): void {
-        if(EnvHelper.notEquals("NODE_ENV", "development")) {
+        if(process.env.NODE_ENV !== "development") {
             return;
         }
 
