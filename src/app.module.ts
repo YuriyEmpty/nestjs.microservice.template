@@ -5,7 +5,7 @@
  */
 
 
-import { MiddlewareConsumer, Module, NestModule, CacheModule } from "@nestjs/common";
+import { MiddlewareConsumer, Module, NestModule } from "@nestjs/common";
 import { ApiModule } from "./api/api.module";
 import { ExampleMiddleware } from "./core/middlewares/example.middleware";
 
