@@ -26,7 +26,7 @@ class Microservice {
     /**
      * Application port
      */
-    private port: number = Number.parseInt(process.env.HTTP_SERVER_PORT);
+    private port: number = Number.parseInt(process.env.PORT ?? "3000");
 
     /**
      * Run application
