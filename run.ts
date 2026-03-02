@@ -60,7 +60,7 @@ class Microservice {
         console.log("=HTTP Routes=")
         // @ts-ignore
         // we do not modify data,only get it
-        const router = this.app.getHttpServer()._events.request._router;
+        const router = this.app.getHttpServer()._events.request.router;
         for(let i = 0; i < router.stack.length; i++) {
             if(!router.stack[i].route) {
                 continue;
